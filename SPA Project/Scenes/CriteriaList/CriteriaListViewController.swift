@@ -14,6 +14,8 @@ final class CriteriaListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = "Критерии"
+        
         configureTableView()
     }
     
@@ -21,6 +23,9 @@ final class CriteriaListViewController: UIViewController {
     private func configureTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+        
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 80
     }
 
 }
@@ -42,13 +47,17 @@ extension CriteriaListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "criteria", for: indexPath) as? CriteriaTableViewCell else {
+            return UITableViewCell()
+        }
         
         let section = CriteriaManager.shared.sections[indexPath.section]
         let criteria = section.criteria[indexPath.row]
         
-        cell.textLabel?.text = criteria.title
-        cell.accessoryType = criteria.points.increment != nil ? .disclosureIndicator : .none
+        cell.configure(
+            title: criteria.title,
+            detailsImage: UIImage(systemName: criteria.points.increment == nil ? "info.circle" : "chevron.right")
+        )
         
         return cell
     }

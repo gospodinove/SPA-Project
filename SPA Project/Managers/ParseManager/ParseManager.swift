@@ -1,5 +1,5 @@
 //
-//  ParseManger.swift
+//  ParseManager.swift
 //  SPA Project
 //
 //  Created by Mitko on 4.12.20.

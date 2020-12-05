@@ -52,13 +52,31 @@ extension CriteriaListViewController: UITableViewDataSource {
         }
         
         let section = CriteriaManager.shared.sections[indexPath.section]
-        let criteria = section.criteria[indexPath.row]
+        let criterion = section.criteria[indexPath.row]
         
+        cell.delegate = self
         cell.configure(
-            title: criteria.title,
-            detailsImage: UIImage(systemName: criteria.points.increment == nil ? "info.circle" : "chevron.right")
+            title: criterion.title,
+            detailsImage: UIImage(systemName: criterion.points.increment == nil ? "info.circle" : "chevron.right"),
+            variant: CriteriaManager.shared.isSelected(criterion) ? .selected : .notSelected
         )
         
         return cell
+    }
+}
+
+extension CriteriaListViewController: CriteriaTableViewCellDelegate {
+    func criteraiTableViewCell(_ cell: CriteriaTableViewCell, changedSelectionTo selection: CriteriaTableViewCell.Variant) {
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        
+        let section = CriteriaManager.shared.sections[indexPath.section]
+        let criterion = section.criteria[indexPath.row]
+        
+        switch selection {
+        case .selected:
+            CriteriaManager.shared.select(criterion)
+        case .notSelected:
+            CriteriaManager.shared.deselect(criterion)
+        }
     }
 }

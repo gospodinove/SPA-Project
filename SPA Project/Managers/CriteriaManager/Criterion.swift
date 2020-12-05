@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Criterion {
+class Criterion {
     let title: String
     let points: Points
     let additionalDocuments: [Document]?

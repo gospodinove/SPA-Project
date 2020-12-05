@@ -7,8 +7,12 @@
 
 import UIKit
 
+protocol CriteriaTableViewCellDelegate: class {
+    func criteraiTableViewCell(_ cell: CriteriaTableViewCell, changedSelectionTo selection: CriteriaTableViewCell.Variant)
+}
+
 class CriteriaTableViewCell: UITableViewCell {
-    private enum Variant {
+    enum Variant {
         case selected
         case notSelected
         
@@ -36,14 +40,20 @@ class CriteriaTableViewCell: UITableViewCell {
     @IBOutlet private weak var iconImageView: UIImageView!
     
     private var variant: Variant = .notSelected
+    weak var delegate: CriteriaTableViewCellDelegate?
     
     @IBAction private func checkmarkButtonTapped(_ sender: UIButton) {
         variant.toggle()
+        
         checkmarkButton.setImage(variant.iconImage, for: .normal)
+        
+        delegate?.criteraiTableViewCell(self, changedSelectionTo: variant)
     }
     
-    func configure(title: String, detailsImage: UIImage?) {
+    func configure(title: String, detailsImage: UIImage?, variant: Variant) {
         titleLabel.text = title
+        
+        self.variant = variant
         
         if detailsImage == nil {
             iconImageView.isHidden = true

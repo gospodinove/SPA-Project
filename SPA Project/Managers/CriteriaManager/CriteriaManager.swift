@@ -27,6 +27,8 @@ struct Document {
 }
 
 class CriteriaManager {
+    private var selectedCriteria = [Criterion]()
+    
     static let shared = CriteriaManager()
     
     let sections: [Section]
@@ -61,6 +63,18 @@ class CriteriaManager {
         ])
         
         sections = [mainSection, socialDocumentSection, socialCommissionSection, professionalSection]
+    }
+    
+    func select(_ criterion: Criterion) {
+        selectedCriteria.append(criterion)
+    }
+    
+    func deselect(_ criterion: Criterion) {
+        selectedCriteria = selectedCriteria.filter({ $0.title != criterion.title })
+    }
+    
+    func isSelected(_ criterion: Criterion) -> Bool {
+        return selectedCriteria.contains(where: { $0.title == criterion.title })
     }
 }
 

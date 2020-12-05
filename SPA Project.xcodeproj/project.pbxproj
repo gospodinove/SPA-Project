@@ -10,6 +10,7 @@
 		38342348257B7FED005E5F47 /* CriteriaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38342347257B7FED005E5F47 /* CriteriaManager.swift */; };
 		3834234C257BA441005E5F47 /* Criterion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3834234B257BA441005E5F47 /* Criterion.swift */; };
 		38B92CA8257BC2DF000C957F /* CriteriaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B92CA7257BC2DF000C957F /* CriteriaTableViewCell.swift */; };
+		38B92CAB257BDEF2000C957F /* CriterionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B92CAA257BDEF2000C957F /* CriterionDetailsViewController.swift */; };
 		38DFFBD5257B73EE00A29101 /* data.csv in Resources */ = {isa = PBXBuildFile; fileRef = 38DFFBD4257B73EE00A29101 /* data.csv */; };
 		38DFFBDA257B7D5300A29101 /* CriteriaListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DFFBD9257B7D5300A29101 /* CriteriaListViewController.swift */; };
 		A410B4C6257A914000F7BF9A /* ParseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A410B4C5257A914000F7BF9A /* ParseManager.swift */; };
@@ -26,6 +27,7 @@
 		38342347257B7FED005E5F47 /* CriteriaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriteriaManager.swift; sourceTree = "<group>"; };
 		3834234B257BA441005E5F47 /* Criterion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Criterion.swift; sourceTree = "<group>"; };
 		38B92CA7257BC2DF000C957F /* CriteriaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriteriaTableViewCell.swift; sourceTree = "<group>"; };
+		38B92CAA257BDEF2000C957F /* CriterionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriterionDetailsViewController.swift; sourceTree = "<group>"; };
 		38DFFBD4257B73EE00A29101 /* data.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = data.csv; sourceTree = "<group>"; };
 		38DFFBD9257B7D5300A29101 /* CriteriaListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriteriaListViewController.swift; sourceTree = "<group>"; };
 		A410B4C5257A914000F7BF9A /* ParseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseManager.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 			children = (
 				38DFFBD9257B7D5300A29101 /* CriteriaListViewController.swift */,
 				38B92CA7257BC2DF000C957F /* CriteriaTableViewCell.swift */,
+				38B92CAA257BDEF2000C957F /* CriterionDetailsViewController.swift */,
 			);
 			path = CriteriaList;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 				A498229C257A8B6000E087B6 /* InstitutionsListViewController.swift in Sources */,
 				A410B4C6257A914000F7BF9A /* ParseManager.swift in Sources */,
 				D17E9591256D6B8200DD43E1 /* AppDelegate.swift in Sources */,
+				38B92CAB257BDEF2000C957F /* CriterionDetailsViewController.swift in Sources */,
 				38B92CA8257BC2DF000C957F /* CriteriaTableViewCell.swift in Sources */,
 				38342348257B7FED005E5F47 /* CriteriaManager.swift in Sources */,
 				3834234C257BA441005E5F47 /* Criterion.swift in Sources */,

@@ -25,6 +25,15 @@ class CriteriaTableViewCell: UITableViewCell {
             }
         }
         
+        var iconTint: UIColor {
+            switch self {
+            case .selected:
+                return .green
+            case .notSelected:
+                return .secondaryLabel
+            }
+        }
+        
         mutating func toggle() {
             switch self {
             case .selected:
@@ -39,14 +48,11 @@ class CriteriaTableViewCell: UITableViewCell {
     @IBOutlet private weak var checkmarkButton: UIButton!
     @IBOutlet private weak var iconImageView: UIImageView!
     
-    private var variant: Variant = .notSelected
+    var variant: Variant = .notSelected
     weak var delegate: CriteriaTableViewCellDelegate?
     
     @IBAction private func checkmarkButtonTapped(_ sender: UIButton) {
         variant.toggle()
-        
-        checkmarkButton.setImage(variant.iconImage, for: .normal)
-        
         delegate?.criteraiTableViewCell(self, changedSelectionTo: variant)
     }
     
@@ -62,6 +68,11 @@ class CriteriaTableViewCell: UITableViewCell {
             iconImageView.image = detailsImage
         }
         
+        updateCheckmarkButton()
+    }
+    
+    func updateCheckmarkButton() {
+        checkmarkButton.tintColor = variant.iconTint
         checkmarkButton.setImage(variant.iconImage, for: .normal)
     }
 }

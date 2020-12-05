@@ -28,6 +28,7 @@ struct Document {
 
 class CriteriaManager {
     private var selectedCriteria = [Criterion]()
+    private var points = 0
     
     static let shared = CriteriaManager()
     
@@ -45,7 +46,7 @@ class CriteriaManager {
         
         let socialDocumentSection = Section(variant: .socialDocument, criteria: [
             Criterion(title: "Детето има неизвестен родител в удостоверението за раждане или отнети родителски права", points: .two, additionalDocuments: [.noRights]),
-            Criterion(title: "Детето има починал родител", points: .noParent, additionalDocuments: [.deathCertificate]),
+            Criterion(title: "Детето има починал родител", points: .deceasedParent, additionalDocuments: [.deathCertificate]),
             Criterion(title: "Един или повече членове на семейството има нетрудоспособност над 70%", points: .unableToWork, additionalDocuments: [.disability]),
             Criterion(title: "Детето е настанено в приемно семейство или семейство на роднини и близки по ЗЗД", points: .three, additionalDocuments: [.socialAid]),
             Criterion(title: "Детето е в риск по ЗЗД", points: .three, additionalDocuments: [.childDefence]),
@@ -67,10 +68,12 @@ class CriteriaManager {
     
     func select(_ criterion: Criterion) {
         selectedCriteria.append(criterion)
+        points += criterion.getSelectedCount() * criterion.points.rawValue
     }
     
     func deselect(_ criterion: Criterion) {
         selectedCriteria = selectedCriteria.filter({ $0.title != criterion.title })
+        points -= criterion.getSelectedCount() * criterion.points.rawValue
     }
     
     func isSelected(_ criterion: Criterion) -> Bool {

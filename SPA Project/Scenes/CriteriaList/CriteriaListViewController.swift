@@ -19,7 +19,27 @@ final class CriteriaListViewController: UIViewController {
         configureTableView()
     }
     
-    //MARK: - Private
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // Reload visible cells
+        tableView.reloadRows(at: tableView.indexPathsForVisibleRows ?? [], with: .automatic)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "toCriterionDetails":
+            guard let destination = segue.destination as? CriterionDetailsViewController,
+                  let cell = sender as? CriteriaTableViewCell,
+                  let indexPath = tableView.indexPath(for: cell) else { break }
+            
+            
+            destination.criterion = getCriterion(forIndexPath: indexPath)
+        default:
+            break
+        }
+    }
+    
     private func configureTableView() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -27,13 +47,21 @@ final class CriteriaListViewController: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 80
     }
-
+    
+    private func getCriterion(forIndexPath indexPath: IndexPath) -> Criterion {
+        let section = CriteriaManager.shared.sections[indexPath.section]
+        return section.criteria[indexPath.row]
+    }
 }
 
 
 extension CriteriaListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return CriteriaManager.shared.sections[section].variant.title
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
@@ -51,13 +79,12 @@ extension CriteriaListViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        let section = CriteriaManager.shared.sections[indexPath.section]
-        let criterion = section.criteria[indexPath.row]
+        let criterion = getCriterion(forIndexPath: indexPath)
         
         cell.delegate = self
         cell.configure(
             title: criterion.title,
-            detailsImage: UIImage(systemName: criterion.points.increment == nil ? "info.circle" : "chevron.right"),
+            detailsImage: UIImage(systemName: criterion.directlySelectable ? "info.circle" : "chevron.right"),
             variant: CriteriaManager.shared.isSelected(criterion) ? .selected : .notSelected
         )
         
@@ -69,8 +96,13 @@ extension CriteriaListViewController: CriteriaTableViewCellDelegate {
     func criteraiTableViewCell(_ cell: CriteriaTableViewCell, changedSelectionTo selection: CriteriaTableViewCell.Variant) {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
         
-        let section = CriteriaManager.shared.sections[indexPath.section]
-        let criterion = section.criteria[indexPath.row]
+        let criterion = getCriterion(forIndexPath: indexPath)
+        
+        if criterion.directlySelectable == false, selection == .selected {
+            cell.variant.toggle()
+            performSegue(withIdentifier: "toCriterionDetails", sender: cell)
+            return
+        }
         
         switch selection {
         case .selected:
@@ -78,5 +110,7 @@ extension CriteriaListViewController: CriteriaTableViewCellDelegate {
         case .notSelected:
             CriteriaManager.shared.deselect(criterion)
         }
+        
+        cell.updateCheckmarkButton()
     }
 }

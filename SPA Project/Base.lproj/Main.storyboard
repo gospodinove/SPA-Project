@@ -98,6 +98,7 @@
                                             <outlet property="checkmarkButton" destination="gMA-qT-p1u" id="Vp4-VZ-09o"/>
                                             <outlet property="iconImageView" destination="gbh-66-8tO" id="PH3-fv-djp"/>
                                             <outlet property="titleLabel" destination="LHK-vF-zzR" id="hsg-J2-f1h"/>
+                                            <segue destination="SSm-eQ-MmD" kind="show" identifier="toCriterionDetails" id="JH1-QP-QDo"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -120,6 +121,119 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oPR-on-2iy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1566.6666666666667" y="1008.4821428571428"/>
+        </scene>
+        <!--Criterion Details View Controller-->
+        <scene sceneID="efv-1B-COu">
+            <objects>
+                <viewController id="SSm-eQ-MmD" customClass="CriterionDetailsViewController" customModule="SPA_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3b7-nT-j6d">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="N96-q7-3Uw">
+                                <rect key="frame" x="20" y="103" width="374" height="323.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="8Ma-PD-8FW">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Критерий" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TpA-8V-9rc">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igm-bc-eoU">
+                                                <rect key="frame" x="0.0" y="23" width="374" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zt1-37-vKF">
+                                        <rect key="frame" x="0.0" y="53.5" width="374" height="43.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Точки" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKQ-gh-c7p" userLabel="Точки">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4f-L1-G4b">
+                                                <rect key="frame" x="0.0" y="23" width="374" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wtf-Ax-dRd">
+                                        <rect key="frame" x="0.0" y="107" width="374" height="43.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Допълнителни документи" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czI-2c-Rth">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LhQ-wt-ecJ">
+                                                <rect key="frame" x="0.0" y="23" width="374" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="rg7-ip-atY">
+                                        <rect key="frame" x="0.0" y="160.5" width="374" height="123"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Брой" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUO-jK-pDr">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eb7-Zi-ZxV">
+                                                <rect key="frame" x="0.0" y="23" width="374" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="Gjf-vn-62G"/>
+                                                </constraints>
+                                            </pickerView>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJ4-ZF-JDH">
+                                        <rect key="frame" x="0.0" y="293.5" width="374" height="30"/>
+                                        <state key="normal" title="Добави"/>
+                                        <connections>
+                                            <action selector="addButtonTapped:" destination="SSm-eQ-MmD" eventType="touchUpInside" id="dTG-EM-qdb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0CV-t5-eFC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="N96-q7-3Uw" firstAttribute="leading" secondItem="0CV-t5-eFC" secondAttribute="leading" constant="20" id="2qD-69-N2h"/>
+                            <constraint firstItem="N96-q7-3Uw" firstAttribute="centerX" secondItem="0CV-t5-eFC" secondAttribute="centerX" id="UQp-uT-NHh"/>
+                            <constraint firstItem="N96-q7-3Uw" firstAttribute="top" secondItem="0CV-t5-eFC" secondAttribute="top" constant="15" id="ZFB-xF-J0W"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="AP8-LA-Q7B"/>
+                    <connections>
+                        <outlet property="addButton" destination="QJ4-ZF-JDH" id="0yd-vb-k61"/>
+                        <outlet property="criterionTitleLabel" destination="igm-bc-eoU" id="N0y-1a-roe"/>
+                        <outlet property="documentsLabel" destination="LhQ-wt-ecJ" id="vgB-fl-8f9"/>
+                        <outlet property="documentsStackView" destination="wtf-Ax-dRd" id="8Bp-XE-CBr"/>
+                        <outlet property="itemCountLabel" destination="PUO-jK-pDr" id="3Q4-4j-WoB"/>
+                        <outlet property="itemCountPickerView" destination="eb7-Zi-ZxV" id="M1v-77-rL5"/>
+                        <outlet property="itemCountStackView" destination="rg7-ip-atY" id="rzk-bQ-XGH"/>
+                        <outlet property="pointsLabel" destination="r4f-L1-G4b" id="dcK-jH-1YI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L5h-T2-L7x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2467" y="1008"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VIT-F3-SPC">

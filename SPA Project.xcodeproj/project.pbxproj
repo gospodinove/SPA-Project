@@ -15,8 +15,10 @@
 		38B92CB5257D0FCF000C957F /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B92CB4257D0FCF000C957F /* UIButton+Helper.swift */; };
 		38DFFBD5257B73EE00A29101 /* data.csv in Resources */ = {isa = PBXBuildFile; fileRef = 38DFFBD4257B73EE00A29101 /* data.csv */; };
 		38DFFBDA257B7D5300A29101 /* CriteriaListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DFFBD9257B7D5300A29101 /* CriteriaListViewController.swift */; };
+		A4021853257D0B330072F6A9 /* InstitutionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4021852257D0B330072F6A9 /* InstitutionDetailsViewController.swift */; };
 		A410B4C6257A914000F7BF9A /* ParseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A410B4C5257A914000F7BF9A /* ParseManager.swift */; };
 		A410B4CA257A91AD00F7BF9A /* csv.swift in Sources */ = {isa = PBXBuildFile; fileRef = A410B4C9257A91AD00F7BF9A /* csv.swift */; };
+		A4571288257D01E200A5F77A /* InstitutionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4571287257D01E200A5F77A /* InstitutionTableViewCell.swift */; };
 		A498229C257A8B6000E087B6 /* InstitutionsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A498229B257A8B6000E087B6 /* InstitutionsListViewController.swift */; };
 		D17E9591256D6B8200DD43E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17E9590256D6B8200DD43E1 /* AppDelegate.swift */; };
 		D17E9593256D6B8200DD43E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17E9592256D6B8200DD43E1 /* SceneDelegate.swift */; };
@@ -34,8 +36,10 @@
 		38B92CB4257D0FCF000C957F /* UIButton+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Helper.swift"; sourceTree = "<group>"; };
 		38DFFBD4257B73EE00A29101 /* data.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = data.csv; sourceTree = "<group>"; };
 		38DFFBD9257B7D5300A29101 /* CriteriaListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriteriaListViewController.swift; sourceTree = "<group>"; };
+		A4021852257D0B330072F6A9 /* InstitutionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstitutionDetailsViewController.swift; sourceTree = "<group>"; };
 		A410B4C5257A914000F7BF9A /* ParseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseManager.swift; sourceTree = "<group>"; };
 		A410B4C9257A91AD00F7BF9A /* csv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = csv.swift; sourceTree = "<group>"; };
+		A4571287257D01E200A5F77A /* InstitutionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstitutionTableViewCell.swift; sourceTree = "<group>"; };
 		A498229B257A8B6000E087B6 /* InstitutionsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstitutionsListViewController.swift; sourceTree = "<group>"; };
 		D17E958D256D6B8200DD43E1 /* SPA Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SPA Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D17E9590256D6B8200DD43E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +89,14 @@
 			path = CriteriaList;
 			sourceTree = "<group>";
 		};
+		A4021851257D0AF70072F6A9 /* InstitutionDetail */ = {
+			isa = PBXGroup;
+			children = (
+				A4021852257D0B330072F6A9 /* InstitutionDetailsViewController.swift */,
+			);
+			path = InstitutionDetail;
+			sourceTree = "<group>";
+		};
 		A410B4C3257A911A00F7BF9A /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,10 +114,19 @@
 			path = ParseManager;
 			sourceTree = "<group>";
 		};
+		A4571283257D017B00A5F77A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A4571287257D01E200A5F77A /* InstitutionTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		A4982298257A8B0D00E087B6 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
 				38DFFBD8257B7D1C00A29101 /* CriteriaList */,
+				A4021851257D0AF70072F6A9 /* InstitutionDetail */,
 				A4982299257A8B1200E087B6 /* InstitutionsList */,
 			);
 			path = Scenes;
@@ -114,6 +135,7 @@
 		A4982299257A8B1200E087B6 /* InstitutionsList */ = {
 			isa = PBXGroup;
 			children = (
+				A4571283257D017B00A5F77A /* Views */,
 				A498229B257A8B6000E087B6 /* InstitutionsListViewController.swift */,
 			);
 			path = InstitutionsList;
@@ -228,10 +250,12 @@
 				38B92CB5257D0FCF000C957F /* UIButton+Helper.swift in Sources */,
 				A410B4C6257A914000F7BF9A /* ParseManager.swift in Sources */,
 				D17E9591256D6B8200DD43E1 /* AppDelegate.swift in Sources */,
+				A4571288257D01E200A5F77A /* InstitutionTableViewCell.swift in Sources */,
 				38B92CAB257BDEF2000C957F /* CriterionDetailsViewController.swift in Sources */,
 				38B92CA8257BC2DF000C957F /* CriteriaTableViewCell.swift in Sources */,
 				38342348257B7FED005E5F47 /* CriteriaManager.swift in Sources */,
 				3834234C257BA441005E5F47 /* Criterion.swift in Sources */,
+				A4021853257D0B330072F6A9 /* InstitutionDetailsViewController.swift in Sources */,
 				D17E9593256D6B8200DD43E1 /* SceneDelegate.swift in Sources */,
 				38B92CB1257D0D2B000C957F /* CriteriaSummaryViewController.swift in Sources */,
 				38DFFBDA257B7D5300A29101 /* CriteriaListViewController.swift in Sources */,

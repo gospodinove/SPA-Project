@@ -7,6 +7,10 @@
 
 import Foundation
 
+enum InstitutionType: String {
+
+    case kindergarten = "\"детска градина\""
+}
 enum InstitutionCategories: String {
 
     case area = "\"Област\""
@@ -33,11 +37,12 @@ struct Institution {
 
 class ParseManager {
     
-    private var institutions: [Institution] = []
+    var unfilteredInstitutions: [Institution] = []
+    var filteredInstitutions: [Institution] = []
 
     static let shared = ParseManager()
     
-    func parseCSV() {
+    func parseCSV(region: String) {
 
         guard let path = Bundle.main.path(forResource: "data", ofType: "csv") else { return }
 
@@ -45,10 +50,19 @@ class ParseManager {
 
             let csv = try CSV(contentsOfURL: path)
             let rows = csv.rows
-            institutions = rows.map { getInsitution(fromRow: $0) }
+            unfilteredInstitutions = rows.map { getInsitution(fromRow: $0) }
+            filteredInstitutions = filterInstitutions(forRegion: region)
+
+            print(filteredInstitutions)
+            print(unfilteredInstitutions)
         } catch let err as NSError {
             print(err.debugDescription)
         }
+    }
+
+    private func filterInstitutions(forRegion region: String) -> [Institution] {
+
+        return unfilteredInstitutions.filter { $0.region == region && $0.type == InstitutionType.kindergarten.rawValue}
     }
     
     private func getInsitution(fromRow row: [String: String]) -> Institution {

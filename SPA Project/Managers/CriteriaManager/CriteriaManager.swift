@@ -79,6 +79,10 @@ class CriteriaManager {
     func isSelected(_ criterion: Criterion) -> Bool {
         return selectedCriteria.contains(where: { $0.title == criterion.title })
     }
+    
+    func getAccumulatedPoints() -> Int {
+        return points
+    }
 }
 
 extension CriteriaManager {

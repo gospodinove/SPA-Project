@@ -10,13 +10,17 @@ import UIKit
 final class CriteriaListViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
-
+    @IBOutlet private weak var submitButton: UIButton!
+    @IBOutlet private weak var belowSubmitButtonView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = "Критерии"
         
         configureTableView()
+        configureSubmitButton()
+        belowSubmitButtonView.backgroundColor = submitButton.backgroundColor
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -24,6 +28,7 @@ final class CriteriaListViewController: UIViewController {
         
         // Reload visible cells
         tableView.reloadRows(at: tableView.indexPathsForVisibleRows ?? [], with: .automatic)
+        updateSubmitButtonText()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -46,6 +51,16 @@ final class CriteriaListViewController: UIViewController {
         
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 80
+    }
+    
+    private func configureSubmitButton() {
+        updateSubmitButtonText()
+        submitButton.applyCustomStyle()
+    }
+    
+    private func updateSubmitButtonText() {
+        let points = CriteriaManager.shared.getAccumulatedPoints()
+        submitButton.setTitle("Прегледайте \(points) точк\(points == 1 ? "a" : "и")", for: .normal)
     }
     
     private func getCriterion(forIndexPath indexPath: IndexPath) -> Criterion {
@@ -112,5 +127,6 @@ extension CriteriaListViewController: CriteriaTableViewCellDelegate {
         }
         
         cell.updateCheckmarkButton()
+        updateSubmitButtonText()
     }
 }

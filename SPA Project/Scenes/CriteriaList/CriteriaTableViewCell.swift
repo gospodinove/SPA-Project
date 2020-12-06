@@ -73,6 +73,6 @@ class CriteriaTableViewCell: UITableViewCell {
     
     func updateCheckmarkButton() {
         checkmarkButton.tintColor = variant.iconTint
-        checkmarkButton.setImage(variant.iconImage, for: .normal)
+        checkmarkButton.setBackgroundImage(variant.iconImage, for: .normal)
     }
 }

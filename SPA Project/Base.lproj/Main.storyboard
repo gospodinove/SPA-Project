@@ -46,8 +46,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gA-dG-y5h">
+                                <rect key="frame" x="0.0" y="862" width="414" height="34"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Fp-lJ-eeT">
+                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="H0q-Uf-EpY"/>
+                                </constraints>
+                                <state key="normal" title="Предайте с Х точки"/>
+                                <connections>
+                                    <segue destination="Cq4-R7-il1" kind="presentation" identifier="goToCriteriaSummary" id="T6v-fp-vWT"/>
+                                </connections>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mg4-wQ-BrU">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="724"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="criteria" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="criteria" id="Qq9-ly-0ef" customClass="CriteriaTableViewCell" customModule="SPA_Project" customModuleProvider="target">
@@ -107,14 +121,23 @@
                         <viewLayoutGuide key="safeArea" id="KKA-fk-Rky"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="KKA-fk-Rky" firstAttribute="trailing" secondItem="6gA-dG-y5h" secondAttribute="trailing" id="1Wj-ON-1Mh"/>
                             <constraint firstItem="mg4-wQ-BrU" firstAttribute="top" secondItem="KKA-fk-Rky" secondAttribute="top" id="1h9-dR-dOz"/>
                             <constraint firstItem="mg4-wQ-BrU" firstAttribute="leading" secondItem="KKA-fk-Rky" secondAttribute="leading" id="2x6-VA-evc"/>
-                            <constraint firstItem="KKA-fk-Rky" firstAttribute="bottom" secondItem="mg4-wQ-BrU" secondAttribute="bottom" id="AOI-w8-dyV"/>
+                            <constraint firstAttribute="bottom" secondItem="6gA-dG-y5h" secondAttribute="bottom" id="8B7-Tl-BTj"/>
+                            <constraint firstItem="KKA-fk-Rky" firstAttribute="bottom" secondItem="4Fp-lJ-eeT" secondAttribute="bottom" id="JTa-e8-2xR"/>
+                            <constraint firstItem="6gA-dG-y5h" firstAttribute="leading" secondItem="KKA-fk-Rky" secondAttribute="leading" id="KWO-7U-dRb"/>
+                            <constraint firstItem="6gA-dG-y5h" firstAttribute="top" secondItem="4Fp-lJ-eeT" secondAttribute="bottom" id="LY1-B3-iNV"/>
                             <constraint firstItem="KKA-fk-Rky" firstAttribute="trailing" secondItem="mg4-wQ-BrU" secondAttribute="trailing" id="Rrl-go-xwt"/>
+                            <constraint firstItem="KKA-fk-Rky" firstAttribute="trailing" secondItem="4Fp-lJ-eeT" secondAttribute="trailing" id="X4s-3f-qpp"/>
+                            <constraint firstItem="4Fp-lJ-eeT" firstAttribute="top" secondItem="mg4-wQ-BrU" secondAttribute="bottom" id="ict-oj-pud"/>
+                            <constraint firstItem="4Fp-lJ-eeT" firstAttribute="leading" secondItem="KKA-fk-Rky" secondAttribute="leading" id="nXC-Aw-03w"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="x7t-yj-gSa"/>
                     <connections>
+                        <outlet property="belowSubmitButtonView" destination="6gA-dG-y5h" id="YSS-rX-WPa"/>
+                        <outlet property="submitButton" destination="4Fp-lJ-eeT" id="bMM-t8-7Hd"/>
                         <outlet property="tableView" destination="mg4-wQ-BrU" id="2rd-0C-NV3"/>
                     </connections>
                 </viewController>
@@ -131,7 +154,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="N96-q7-3Uw">
-                                <rect key="frame" x="20" y="103" width="374" height="323.5"/>
+                                <rect key="frame" x="20" y="103" width="374" height="283.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="8Ma-PD-8FW">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
@@ -201,27 +224,42 @@
                                             </pickerView>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJ4-ZF-JDH">
-                                        <rect key="frame" x="0.0" y="293.5" width="374" height="30"/>
-                                        <state key="normal" title="Добави"/>
-                                        <connections>
-                                            <action selector="addButtonTapped:" destination="SSm-eQ-MmD" eventType="touchUpInside" id="dTG-EM-qdb"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJ4-ZF-JDH">
+                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="9gg-16-IVy"/>
+                                </constraints>
+                                <state key="normal" title="Добави"/>
+                                <connections>
+                                    <action selector="addButtonTapped:" destination="SSm-eQ-MmD" eventType="touchUpInside" id="dTG-EM-qdb"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B8m-EH-tIQ">
+                                <rect key="frame" x="0.0" y="862" width="414" height="34"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0CV-t5-eFC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="N96-q7-3Uw" firstAttribute="leading" secondItem="0CV-t5-eFC" secondAttribute="leading" constant="20" id="2qD-69-N2h"/>
+                            <constraint firstItem="QJ4-ZF-JDH" firstAttribute="leading" secondItem="0CV-t5-eFC" secondAttribute="leading" id="C6U-4o-911"/>
+                            <constraint firstItem="B8m-EH-tIQ" firstAttribute="leading" secondItem="0CV-t5-eFC" secondAttribute="leading" id="Hv8-89-gV9"/>
+                            <constraint firstItem="0CV-t5-eFC" firstAttribute="bottom" secondItem="QJ4-ZF-JDH" secondAttribute="bottom" id="PGC-3M-2Xx"/>
                             <constraint firstItem="N96-q7-3Uw" firstAttribute="centerX" secondItem="0CV-t5-eFC" secondAttribute="centerX" id="UQp-uT-NHh"/>
+                            <constraint firstItem="B8m-EH-tIQ" firstAttribute="centerX" secondItem="0CV-t5-eFC" secondAttribute="centerX" id="UTX-OU-7lY"/>
                             <constraint firstItem="N96-q7-3Uw" firstAttribute="top" secondItem="0CV-t5-eFC" secondAttribute="top" constant="15" id="ZFB-xF-J0W"/>
+                            <constraint firstItem="B8m-EH-tIQ" firstAttribute="top" secondItem="QJ4-ZF-JDH" secondAttribute="bottom" id="fOV-Hp-UyE"/>
+                            <constraint firstAttribute="bottom" secondItem="B8m-EH-tIQ" secondAttribute="bottom" id="gQY-uK-ZLU"/>
+                            <constraint firstItem="QJ4-ZF-JDH" firstAttribute="centerX" secondItem="0CV-t5-eFC" secondAttribute="centerX" id="wIq-gA-S8h"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="AP8-LA-Q7B"/>
                     <connections>
                         <outlet property="addButton" destination="QJ4-ZF-JDH" id="0yd-vb-k61"/>
+                        <outlet property="belowAddButtonView" destination="B8m-EH-tIQ" id="JD4-Fg-6B4"/>
                         <outlet property="criterionTitleLabel" destination="igm-bc-eoU" id="N0y-1a-roe"/>
                         <outlet property="documentsLabel" destination="LhQ-wt-ecJ" id="vgB-fl-8f9"/>
                         <outlet property="documentsStackView" destination="wtf-Ax-dRd" id="8Bp-XE-CBr"/>
@@ -234,6 +272,80 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L5h-T2-L7x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2467" y="1008"/>
+        </scene>
+        <!--Criteria Summary View Controller-->
+        <scene sceneID="eM5-v7-Hdo">
+            <objects>
+                <viewController id="Cq4-R7-il1" customClass="CriteriaSummaryViewController" customModule="SPA_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vc9-6E-h3Q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V5K-pN-voU">
+                                <rect key="frame" x="0.0" y="808" width="414" height="34"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OZ7-6q-3Yb">
+                                <rect key="frame" x="20" y="40" width="374" height="115"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имате Х точки от избраните критерии" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WM4-P4-D69">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="За всяко дете, автоматично се дават допълнителни точки по реда на желанията:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eb0-Ce-Q6N">
+                                        <rect key="frame" x="0.0" y="34" width="374" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQX-FI-AYV">
+                                        <rect key="frame" x="0.0" y="85" width="374" height="30"/>
+                                        <state key="normal" title="Натиснете тук за повече информация"/>
+                                        <connections>
+                                            <action selector="linkTapped:" destination="Cq4-R7-il1" eventType="touchUpInside" id="JW2-mg-xXb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7GM-Eu-4Wr">
+                                <rect key="frame" x="0.0" y="758" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Ffx-LL-gul"/>
+                                </constraints>
+                                <state key="normal" title="Дабавете още критерии"/>
+                                <connections>
+                                    <action selector="dismissTapped:" destination="Cq4-R7-il1" eventType="touchUpInside" id="hPi-gV-Gwt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="sr1-Mc-cIv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="V5K-pN-voU" secondAttribute="bottom" id="4fd-WW-u4j"/>
+                            <constraint firstItem="sr1-Mc-cIv" firstAttribute="bottom" secondItem="7GM-Eu-4Wr" secondAttribute="bottom" id="52h-QC-mTQ"/>
+                            <constraint firstItem="OZ7-6q-3Yb" firstAttribute="top" secondItem="sr1-Mc-cIv" secondAttribute="top" constant="40" id="6Ph-Pj-1Qv"/>
+                            <constraint firstItem="sr1-Mc-cIv" firstAttribute="trailing" secondItem="7GM-Eu-4Wr" secondAttribute="trailing" id="F63-hr-TJE"/>
+                            <constraint firstItem="V5K-pN-voU" firstAttribute="centerX" secondItem="sr1-Mc-cIv" secondAttribute="centerX" id="GUm-nL-ZyC"/>
+                            <constraint firstItem="V5K-pN-voU" firstAttribute="top" secondItem="7GM-Eu-4Wr" secondAttribute="bottom" id="QTy-zd-pEV"/>
+                            <constraint firstItem="OZ7-6q-3Yb" firstAttribute="leading" secondItem="sr1-Mc-cIv" secondAttribute="leading" constant="20" id="cw3-71-2PV"/>
+                            <constraint firstItem="V5K-pN-voU" firstAttribute="leading" secondItem="sr1-Mc-cIv" secondAttribute="leading" id="qWz-c9-VJK"/>
+                            <constraint firstItem="7GM-Eu-4Wr" firstAttribute="leading" secondItem="sr1-Mc-cIv" secondAttribute="leading" id="re7-mv-TNq"/>
+                            <constraint firstItem="OZ7-6q-3Yb" firstAttribute="centerX" secondItem="sr1-Mc-cIv" secondAttribute="centerX" id="ugv-MN-mM2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="additionalPointsLabel" destination="Eb0-Ce-Q6N" id="Lsv-mP-1Fn"/>
+                        <outlet property="belowDismissButtonView" destination="V5K-pN-voU" id="Nc3-ma-guZ"/>
+                        <outlet property="dismissButton" destination="7GM-Eu-4Wr" id="AOM-UO-Ut4"/>
+                        <outlet property="linkButton" destination="BQX-FI-AYV" id="ZZu-8j-CDg"/>
+                        <outlet property="pointsLabel" destination="WM4-P4-D69" id="e5Z-6c-6sa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="84p-VS-X4Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1567" y="1801"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VIT-F3-SPC">

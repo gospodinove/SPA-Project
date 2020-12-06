@@ -20,6 +20,7 @@ class CriterionDetailsViewController: UIViewController {
     @IBOutlet private weak var itemCountStackView: UIStackView!
     
     @IBOutlet private weak var addButton: UIButton!
+    @IBOutlet private weak var belowAddButtonView: UIView!
     
     var criterion: Criterion?
     
@@ -27,6 +28,9 @@ class CriterionDetailsViewController: UIViewController {
         super.viewDidLoad()
 
         title = "Информация"
+        
+        addButton.applyCustomStyle()
+        belowAddButtonView.backgroundColor = addButton.backgroundColor
         
         configureCounter()
         configureLabels()
@@ -67,10 +71,11 @@ class CriterionDetailsViewController: UIViewController {
     private func updateAddButton() {
         guard let criterion = criterion, CriteriaManager.shared.isSelected(criterion) == false else {
             addButton.isHidden = true
+            belowAddButtonView.isHidden = true
             return
         }
         
-        addButton.setTitle("Добави \(criterion.accumulatedPoints) точк\(criterion.accumulatedPoints == 1 ? "a" : "и")", for: .normal)
+        addButton.setTitle("Добавете \(criterion.accumulatedPoints) точк\(criterion.accumulatedPoints == 1 ? "a" : "и")", for: .normal)
     }
 }
 

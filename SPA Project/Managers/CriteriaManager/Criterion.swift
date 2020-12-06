@@ -51,6 +51,8 @@ extension Criterion {
             switch self {
             case .parent, .deceasedParent, .principalDecision:
                 return 2
+            case .extraordinaryConditions:
+                return 6
             case .sibling, .unableToWork:
                 return 10
             default:
@@ -106,6 +108,8 @@ extension Criterion {
                 return "починали родители"
             case .unableToWork:
                 return "нетрудоспособни в семейството"
+            case .extraordinaryConditions:
+                return "точки от комисия"
             default:
                 return nil
             }

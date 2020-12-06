@@ -51,34 +51,35 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="criteria" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="criteria" id="Qq9-ly-0ef" customClass="CriteriaTableViewCell" customModule="SPA_Project" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="52.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qq9-ly-0ef" id="chp-gX-HmG">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="52.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="45w-0z-5fc">
-                                                    <rect key="frame" x="20" y="15" width="374" height="22.5"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="45w-0z-5fc">
+                                                    <rect key="frame" x="15" y="15" width="384" height="25.5"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMA-qT-p1u">
-                                                            <rect key="frame" x="0.0" y="0.5" width="25" height="22"/>
+                                                            <rect key="frame" x="0.0" y="1" width="25" height="24"/>
                                                             <constraints>
+                                                                <constraint firstAttribute="width" secondItem="gMA-qT-p1u" secondAttribute="height" id="E91-DH-3mj"/>
                                                                 <constraint firstAttribute="width" constant="25" id="vZG-6M-ffr"/>
                                                             </constraints>
                                                             <color key="tintColor" systemColor="secondaryLabelColor"/>
-                                                            <state key="normal" image="circle" catalog="system"/>
+                                                            <state key="normal" backgroundImage="circle" catalog="system"/>
                                                             <connections>
                                                                 <action selector="checkmarkButtonTapped:" destination="Qq9-ly-0ef" eventType="touchUpInside" id="vfS-8T-Vq7"/>
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHK-vF-zzR">
-                                                            <rect key="frame" x="30" y="1" width="314" height="20.5"/>
+                                                            <rect key="frame" x="35" y="2.5" width="314" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="gbh-66-8tO">
-                                                            <rect key="frame" x="349" y="3.5" width="25" height="16.5"/>
+                                                            <rect key="frame" x="359" y="5" width="25" height="16.5"/>
                                                             <color key="tintColor" systemColor="secondaryLabelColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="25" id="cHt-ht-EPu"/>
@@ -88,7 +89,7 @@
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="45w-0z-5fc" firstAttribute="leading" secondItem="chp-gX-HmG" secondAttribute="leading" constant="20" id="9Ci-E3-xn7"/>
+                                                <constraint firstItem="45w-0z-5fc" firstAttribute="leading" secondItem="chp-gX-HmG" secondAttribute="leading" constant="15" id="9Ci-E3-xn7"/>
                                                 <constraint firstAttribute="bottom" secondItem="45w-0z-5fc" secondAttribute="bottom" constant="15" id="dag-QK-sws"/>
                                                 <constraint firstItem="45w-0z-5fc" firstAttribute="top" secondItem="chp-gX-HmG" secondAttribute="top" constant="15" id="n09-eU-QUo"/>
                                                 <constraint firstItem="45w-0z-5fc" firstAttribute="centerX" secondItem="chp-gX-HmG" secondAttribute="centerX" id="xnj-RT-Vam"/>

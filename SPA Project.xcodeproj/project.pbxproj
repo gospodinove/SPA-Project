@@ -18,6 +18,7 @@
 		A4021853257D0B330072F6A9 /* InstitutionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4021852257D0B330072F6A9 /* InstitutionDetailsViewController.swift */; };
 		A410B4C6257A914000F7BF9A /* ParseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A410B4C5257A914000F7BF9A /* ParseManager.swift */; };
 		A410B4CA257A91AD00F7BF9A /* csv.swift in Sources */ = {isa = PBXBuildFile; fileRef = A410B4C9257A91AD00F7BF9A /* csv.swift */; };
+		A4344AD7257FEDF30095709B /* ChooseRegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4344AD6257FEDF30095709B /* ChooseRegionViewController.swift */; };
 		A4571288257D01E200A5F77A /* InstitutionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4571287257D01E200A5F77A /* InstitutionTableViewCell.swift */; };
 		A498229C257A8B6000E087B6 /* InstitutionsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A498229B257A8B6000E087B6 /* InstitutionsListViewController.swift */; };
 		D17E9591256D6B8200DD43E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17E9590256D6B8200DD43E1 /* AppDelegate.swift */; };
@@ -39,6 +40,7 @@
 		A4021852257D0B330072F6A9 /* InstitutionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstitutionDetailsViewController.swift; sourceTree = "<group>"; };
 		A410B4C5257A914000F7BF9A /* ParseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseManager.swift; sourceTree = "<group>"; };
 		A410B4C9257A91AD00F7BF9A /* csv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = csv.swift; sourceTree = "<group>"; };
+		A4344AD6257FEDF30095709B /* ChooseRegionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseRegionViewController.swift; sourceTree = "<group>"; };
 		A4571287257D01E200A5F77A /* InstitutionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstitutionTableViewCell.swift; sourceTree = "<group>"; };
 		A498229B257A8B6000E087B6 /* InstitutionsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstitutionsListViewController.swift; sourceTree = "<group>"; };
 		D17E958D256D6B8200DD43E1 /* SPA Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SPA Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +116,14 @@
 			path = ParseManager;
 			sourceTree = "<group>";
 		};
+		A4344AD5257FEDDE0095709B /* ChooseRegion */ = {
+			isa = PBXGroup;
+			children = (
+				A4344AD6257FEDF30095709B /* ChooseRegionViewController.swift */,
+			);
+			path = ChooseRegion;
+			sourceTree = "<group>";
+		};
 		A4571283257D017B00A5F77A /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +135,7 @@
 		A4982298257A8B0D00E087B6 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				A4344AD5257FEDDE0095709B /* ChooseRegion */,
 				38DFFBD8257B7D1C00A29101 /* CriteriaList */,
 				A4021851257D0AF70072F6A9 /* InstitutionDetail */,
 				A4982299257A8B1200E087B6 /* InstitutionsList */,
@@ -260,6 +271,7 @@
 				38B92CB1257D0D2B000C957F /* CriteriaSummaryViewController.swift in Sources */,
 				38DFFBDA257B7D5300A29101 /* CriteriaListViewController.swift in Sources */,
 				A410B4CA257A91AD00F7BF9A /* csv.swift in Sources */,
+				A4344AD7257FEDF30095709B /* ChooseRegionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

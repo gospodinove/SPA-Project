@@ -9,13 +9,15 @@ import UIKit
 
 class InstitutionsListViewController: UIViewController {
 
+    var region: String?
+
     @IBOutlet private weak var tableView: UITableView!
 
     override func viewDidLoad() {
 
         super.viewDidLoad()
 
-        ParseManager.shared.parseCSV(region: "\"Искър\"")
+        ParseManager.shared.parseCSV(region: region ?? "")
         configureViews()
     }
     

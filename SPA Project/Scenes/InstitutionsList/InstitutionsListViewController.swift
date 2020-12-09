@@ -17,7 +17,7 @@ class InstitutionsListViewController: UIViewController {
 
         super.viewDidLoad()
 
-        ParseManager.shared.parseCSV(region: region ?? "")
+        ParseManager.shared.parseCSV(region: region ?? "") 
         configureViews()
         configureNavigationItem()
     }
@@ -25,6 +25,7 @@ class InstitutionsListViewController: UIViewController {
     private func configureViews() {
         
         title = "Детски градини"
+        tabBarController?.tabBar.barTintColor = #colorLiteral(red: 0.4219818413, green: 0.7247959375, blue: 0.5735316873, alpha: 1)
         tableView.delegate = self
         tableView.dataSource = self
     }

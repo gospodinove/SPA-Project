@@ -31,6 +31,6 @@ class InstitutionTableViewCell: UITableViewCell {
 
         guard let institution = institution else { return }
 
-        nameLabel.text = institution.name
+        nameLabel.text = ParseManager.shared.removeQuotes(institution.name)
     }
 }

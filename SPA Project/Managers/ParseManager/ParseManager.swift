@@ -65,6 +65,11 @@ class ParseManager {
         return unfilteredInstitutions.filter { $0.region == region && $0.type == InstitutionType.kindergarten.rawValue}
     }
     
+    func removeQuotes(_ text: String) -> String {
+
+        return text.replacingOccurrences(of: "\"", with: "")
+    }
+
     private func getInsitution(fromRow row: [String: String]) -> Institution {
 
         let newInstitution = Institution(

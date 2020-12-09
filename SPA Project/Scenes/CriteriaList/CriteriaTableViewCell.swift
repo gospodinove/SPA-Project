@@ -28,7 +28,7 @@ class CriteriaTableViewCell: UITableViewCell {
         var iconTint: UIColor {
             switch self {
             case .selected:
-                return .green
+                return #colorLiteral(red: 0.3025748432, green: 0.6219774485, blue: 0.3998454511, alpha: 1)
             case .notSelected:
                 return .secondaryLabel
             }

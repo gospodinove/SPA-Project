@@ -1,0 +1,16 @@
+PODS:
+  - IQDropDownTextField (2.0)
+
+DEPENDENCIES:
+  - IQDropDownTextField
+
+SPEC REPOS:
+  trunk:
+    - IQDropDownTextField
+
+SPEC CHECKSUMS:
+  IQDropDownTextField: 79293d19042b6f2ee6f02decf4a0e68e59e4f327
+
+PODFILE CHECKSUM: 0f228131ba4129eea795460c1502db75ed46d3b5
+
+COCOAPODS: 1.10.0.rc.1

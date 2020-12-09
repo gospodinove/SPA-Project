@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pw6-pV-pIv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="29E-60-WQc">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,24 +11,24 @@
         <!--Choose Region View Controller-->
         <scene sceneID="p2h-Py-FYL">
             <objects>
-                <viewController id="29E-60-WQc" customClass="ChooseRegionViewController" customModule="SPA_Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChooseRegionViewController" id="29E-60-WQc" customClass="ChooseRegionViewController" customModule="SPA_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Y8-5D-8PD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="В кой район търсите детска градина?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCW-g5-YTx">
-                                <rect key="frame" x="57" y="392" width="301" height="21"/>
+                                <rect key="frame" x="57" y="348" width="301" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dFt-Lv-OC6">
-                                <rect key="frame" x="57" y="431" width="301" height="34"/>
+                                <rect key="frame" x="57" y="387" width="301" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EVr-O7-2nG">
-                                <rect key="frame" x="185" y="487" width="44" height="30"/>
+                                <rect key="frame" x="185" y="443" width="44" height="30"/>
                                 <state key="normal" title="Търси"/>
                                 <connections>
                                     <action selector="didTapOnSearchButton:" destination="29E-60-WQc" eventType="touchUpInside" id="Wqx-D4-szB"/>
@@ -117,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bqE-eP-KP5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1566.6666666666667" y="255.80357142857142"/>
+            <point key="canvasLocation" x="2476.811594202899" y="255.80357142857142"/>
         </scene>
         <!--Institution Details View Controller-->
         <scene sceneID="4bi-bO-exb">
@@ -288,22 +288,18 @@
                     <viewLayoutGuide key="safeArea" id="AVQ-vh-cw2"/>
                 </stackView>
             </objects>
-            <point key="canvasLocation" x="2402.898550724638" y="255.80357142857142"/>
+            <point key="canvasLocation" x="3313.04347826087" y="255.80357142857142"/>
         </scene>
         <!--Criteria List View Controller-->
         <scene sceneID="Zmg-AA-fmy">
             <objects>
-                <viewController id="4Mt-NF-FJa" customClass="CriteriaListViewController" customModule="SPA_Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CriteriaListViewController" id="4Mt-NF-FJa" customClass="CriteriaListViewController" customModule="SPA_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FR9-iu-LYk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gA-dG-y5h">
-                                <rect key="frame" x="0.0" y="862" width="414" height="34"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Fp-lJ-eeT">
-                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="763" width="414" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="H0q-Uf-EpY"/>
                                 </constraints>
@@ -313,7 +309,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mg4-wQ-BrU">
-                                <rect key="frame" x="0.0" y="88" width="414" height="724"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="675"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="criteria" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="criteria" id="Qq9-ly-0ef" customClass="CriteriaTableViewCell" customModule="SPA_Project" customModuleProvider="target">
@@ -374,13 +370,9 @@
                         <viewLayoutGuide key="safeArea" id="KKA-fk-Rky"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="KKA-fk-Rky" firstAttribute="trailing" secondItem="6gA-dG-y5h" secondAttribute="trailing" id="1Wj-ON-1Mh"/>
                             <constraint firstItem="mg4-wQ-BrU" firstAttribute="top" secondItem="KKA-fk-Rky" secondAttribute="top" id="1h9-dR-dOz"/>
                             <constraint firstItem="mg4-wQ-BrU" firstAttribute="leading" secondItem="KKA-fk-Rky" secondAttribute="leading" id="2x6-VA-evc"/>
-                            <constraint firstAttribute="bottom" secondItem="6gA-dG-y5h" secondAttribute="bottom" id="8B7-Tl-BTj"/>
                             <constraint firstItem="KKA-fk-Rky" firstAttribute="bottom" secondItem="4Fp-lJ-eeT" secondAttribute="bottom" id="JTa-e8-2xR"/>
-                            <constraint firstItem="6gA-dG-y5h" firstAttribute="leading" secondItem="KKA-fk-Rky" secondAttribute="leading" id="KWO-7U-dRb"/>
-                            <constraint firstItem="6gA-dG-y5h" firstAttribute="top" secondItem="4Fp-lJ-eeT" secondAttribute="bottom" id="LY1-B3-iNV"/>
                             <constraint firstItem="KKA-fk-Rky" firstAttribute="trailing" secondItem="mg4-wQ-BrU" secondAttribute="trailing" id="Rrl-go-xwt"/>
                             <constraint firstItem="KKA-fk-Rky" firstAttribute="trailing" secondItem="4Fp-lJ-eeT" secondAttribute="trailing" id="X4s-3f-qpp"/>
                             <constraint firstItem="4Fp-lJ-eeT" firstAttribute="top" secondItem="mg4-wQ-BrU" secondAttribute="bottom" id="ict-oj-pud"/>
@@ -389,14 +381,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="x7t-yj-gSa"/>
                     <connections>
-                        <outlet property="belowSubmitButtonView" destination="6gA-dG-y5h" id="YSS-rX-WPa"/>
                         <outlet property="submitButton" destination="4Fp-lJ-eeT" id="bMM-t8-7Hd"/>
                         <outlet property="tableView" destination="mg4-wQ-BrU" id="2rd-0C-NV3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oPR-on-2iy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1566.6666666666667" y="1008.4821428571428"/>
+            <point key="canvasLocation" x="2476.811594202899" y="1008.4821428571428"/>
         </scene>
         <!--Criterion Details View Controller-->
         <scene sceneID="efv-1B-COu">
@@ -480,7 +471,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJ4-ZF-JDH">
-                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="763" width="414" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="9gg-16-IVy"/>
                                 </constraints>
@@ -490,7 +481,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B8m-EH-tIQ">
-                                <rect key="frame" x="0.0" y="862" width="414" height="34"/>
+                                <rect key="frame" x="0.0" y="813" width="414" height="83"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
@@ -524,7 +515,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L5h-T2-L7x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2467" y="1008"/>
+            <point key="canvasLocation" x="3376.811594202899" y="1007.8125"/>
         </scene>
         <!--Criteria Summary View Controller-->
         <scene sceneID="eM5-v7-Hdo">
@@ -598,12 +589,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="84p-VS-X4Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1567" y="1801"/>
+            <point key="canvasLocation" x="2477" y="1774"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Критерии-->
         <scene sceneID="VIT-F3-SPC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YzO-5a-UiK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Критерии" image="checkmark.square" catalog="system" id="4uU-bw-IUq"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gbR-0m-oPI">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -616,12 +608,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4bM-Os-qp1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="656.52173913043487" y="1007.8125"/>
+            <point key="canvasLocation" x="1566.6666666666667" y="1007.8125"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Детски градини-->
         <scene sceneID="Azy-ya-SvR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dBH-Z9-eAh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Детски градини" image="building.2" catalog="system" id="35H-SF-r3N"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="CXY-3v-CjS"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HwC-Lk-2p7">
@@ -635,28 +628,30 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eeh-Wj-fQM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="657" y="256"/>
+            <point key="canvasLocation" x="1566.6666666666667" y="255.80357142857142"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="aIC-ub-Ac1">
+        <!--Tab Bar Controller-->
+        <scene sceneID="Ulg-OD-h5D">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pw6-pV-pIv" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarViewController" automaticallyAdjustsScrollViewInsets="NO" id="vQQ-cQ-jhs" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YeH-pX-peS">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hCj-ZP-9nw">
                         <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
                     <connections>
-                        <segue destination="29E-60-WQc" kind="relationship" relationship="rootViewController" id="Q4L-It-C7Q"/>
+                        <segue destination="dBH-Z9-eAh" kind="relationship" relationship="viewControllers" id="5RB-lD-tpS"/>
+                        <segue destination="YzO-5a-UiK" kind="relationship" relationship="viewControllers" id="ZuP-UZ-4iE"/>
                     </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="j9b-8U-zwZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VfI-ht-jrz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="657" y="-438"/>
+            <point key="canvasLocation" x="656.52173913043487" y="631.47321428571422"/>
         </scene>
     </scenes>
     <resources>
+        <image name="building.2" catalog="system" width="128" height="106"/>
+        <image name="checkmark.square" catalog="system" width="128" height="114"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="circle" catalog="system" width="128" height="121"/>
         <systemColor name="secondaryLabelColor">

@@ -21,6 +21,7 @@
 		A4344AD7257FEDF30095709B /* ChooseRegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4344AD6257FEDF30095709B /* ChooseRegionViewController.swift */; };
 		A4571288257D01E200A5F77A /* InstitutionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4571287257D01E200A5F77A /* InstitutionTableViewCell.swift */; };
 		A498229C257A8B6000E087B6 /* InstitutionsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A498229B257A8B6000E087B6 /* InstitutionsListViewController.swift */; };
+		D154CEB72580E6D6007F0EA6 /* UIApplication+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D154CEB62580E6D6007F0EA6 /* UIApplication+Helper.swift */; };
 		D17E9591256D6B8200DD43E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17E9590256D6B8200DD43E1 /* AppDelegate.swift */; };
 		D17E9593256D6B8200DD43E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17E9592256D6B8200DD43E1 /* SceneDelegate.swift */; };
 		D17E9598256D6B8200DD43E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D17E9596256D6B8200DD43E1 /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 		A4344AD6257FEDF30095709B /* ChooseRegionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseRegionViewController.swift; sourceTree = "<group>"; };
 		A4571287257D01E200A5F77A /* InstitutionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstitutionTableViewCell.swift; sourceTree = "<group>"; };
 		A498229B257A8B6000E087B6 /* InstitutionsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstitutionsListViewController.swift; sourceTree = "<group>"; };
+		D154CEB62580E6D6007F0EA6 /* UIApplication+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Helper.swift"; sourceTree = "<group>"; };
 		D17E958D256D6B8200DD43E1 /* SPA Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SPA Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D17E9590256D6B8200DD43E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D17E9592256D6B8200DD43E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				38B92CB4257D0FCF000C957F /* UIButton+Helper.swift */,
+				D154CEB62580E6D6007F0EA6 /* UIApplication+Helper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			files = (
 				A498229C257A8B6000E087B6 /* InstitutionsListViewController.swift in Sources */,
 				38B92CB5257D0FCF000C957F /* UIButton+Helper.swift in Sources */,
+				D154CEB72580E6D6007F0EA6 /* UIApplication+Helper.swift in Sources */,
 				A410B4C6257A914000F7BF9A /* ParseManager.swift in Sources */,
 				D17E9591256D6B8200DD43E1 /* AppDelegate.swift in Sources */,
 				A4571288257D01E200A5F77A /* InstitutionTableViewCell.swift in Sources */,

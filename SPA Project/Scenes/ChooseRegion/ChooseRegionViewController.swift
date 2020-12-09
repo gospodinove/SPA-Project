@@ -19,9 +19,13 @@ class ChooseRegionViewController: UIViewController {
     
     @IBAction func didTapOnSearchButton(_ sender: UIButton) {
 
-        guard let region = regionTextField.text else { return }
-        let vc = storyboard?.instantiateViewController(identifier: "InstitutionsListViewController") as! InstitutionsListViewController
-        vc.region = "\"\(region.capitalized)\""
-        navigationController?.pushViewController(vc, animated: true)
+        guard let region = regionTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines), region.isEmpty == false else { return }
+        
+        let tabBar = storyboard?.instantiateViewController(identifier: "MainTabBarViewController") as! UITabBarController
+        
+        let institutionsListVC = (tabBar.viewControllers?.first as! UINavigationController).viewControllers.first as! InstitutionsListViewController
+        institutionsListVC.region = "\"\(region.capitalized)\""
+        
+        UIApplication.shared.changeRootViewController(to: tabBar, animation: .transitionCurlUp)
     }
 }

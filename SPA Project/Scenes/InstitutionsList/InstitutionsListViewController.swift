@@ -19,6 +19,7 @@ class InstitutionsListViewController: UIViewController {
 
         ParseManager.shared.parseCSV(region: region ?? "")
         configureViews()
+        configureNavigationItem()
     }
     
     private func configureViews() {
@@ -31,6 +32,24 @@ class InstitutionsListViewController: UIViewController {
     private func getInstitution(forIndexPath indexPath: IndexPath) -> Institution{
 
         return ParseManager.shared.filteredInstitutions[indexPath.row]
+    }
+    
+    private func configureNavigationItem() {
+        
+        let backButton = UIButton(type: .custom)
+        backButton.setImage(UIImage(systemName: "chevron.left"), for: .normal) // Image can be downloaded from here below link
+        backButton.setTitle("Back", for: .normal)
+        backButton.setTitleColor(backButton.tintColor, for: .normal) // You can change the TitleColor
+        backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
+    }
+    
+    @objc private func backButtonTapped() {
+        
+        guard let vc = storyboard?.instantiateViewController(identifier: "ChooseRegionViewController") else { return }
+        
+        UIApplication.shared.changeRootViewController(to: vc, animation: .transitionCurlDown)
     }
 }
 

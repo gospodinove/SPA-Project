@@ -11,7 +11,6 @@ final class CriteriaListViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var submitButton: UIButton!
-    @IBOutlet private weak var belowSubmitButtonView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +19,6 @@ final class CriteriaListViewController: UIViewController {
         
         configureTableView()
         configureSubmitButton()
-        belowSubmitButtonView.backgroundColor = submitButton.backgroundColor
     }
     
     override func viewDidAppear(_ animated: Bool) {
